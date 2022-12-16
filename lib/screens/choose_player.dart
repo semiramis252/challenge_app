@@ -49,7 +49,7 @@ class _ChoosePlayerState extends State<ChoosePlayer> {
               WidgetFunctions.addVerticalSpace(size.height / 30),
               playerList.values.isEmpty
                   ? const Text(
-                      'Your players will appear here ',
+                      'Your players will appear here !',
                     )
                   : _playerListView(playerList),
             ],
