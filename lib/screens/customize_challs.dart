@@ -18,6 +18,8 @@ class CustomizeChalls extends StatefulWidget {
 class _CustomizeChallsState extends State<CustomizeChalls> {
   final TextEditingController challController = TextEditingController();
 
+  Box<ChallModel> get chaList => context.watch<PlayerProvider>().challs;
+
   @override
   void dispose() {
     challController.dispose();
@@ -26,7 +28,6 @@ class _CustomizeChallsState extends State<CustomizeChalls> {
 
   @override
   Widget build(BuildContext context) {
-    var chaList = context.watch<PlayerProvider>().challs;
     var size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(

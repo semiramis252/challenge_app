@@ -1,6 +1,7 @@
 import 'package:challange_app/consts/colors.dart';
 import 'package:challange_app/consts/widget_functions.dart';
 import 'package:challange_app/customs/custom_container.dart';
+import 'package:challange_app/extensions/context_extension.dart';
 import 'package:challange_app/screens/bottom_navbar.dart';
 import 'package:challange_app/screens/choose_player.dart';
 import 'package:challange_app/screens/rules.dart';
@@ -12,7 +13,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
@@ -20,18 +20,18 @@ class HomePage extends StatelessWidget {
         body: Center(
           child: Column(
             children: [
-              WidgetFunctions.addVerticalSpace(size.height / 8),
+              WidgetFunctions.addVerticalSpace(context.dynamicHeight(0.125)),
               _contestImage(),
-              WidgetFunctions.addVerticalSpace(size.height / 100),
+              WidgetFunctions.addVerticalSpace(context.cSize.height / 100),
               _helloText(),
               _subTitle1(),
               _subTitle2(),
-              WidgetFunctions.addVerticalSpace(size.height / 20),
-              _customizeSettingsButton(size, context),
-              WidgetFunctions.addVerticalSpace(size.height / 40),
-              _rulesButton(size, context),
-              WidgetFunctions.addVerticalSpace(size.height / 40),
-              _iconRefenceButton(size),
+              WidgetFunctions.addVerticalSpace(context.cSize.height / 20),
+              _customizeSettingsButton(context.cSize, context),
+              WidgetFunctions.addVerticalSpace(context.cSize.height / 40),
+              _rulesButton(context.cSize, context),
+              WidgetFunctions.addVerticalSpace(context.cSize.height / 40),
+              _iconRefenceButton(context.cSize),
             ],
           ),
         ),
